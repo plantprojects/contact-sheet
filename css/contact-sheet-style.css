@@ -1,0 +1,171 @@
+/*
+ * Styles for Contact Sheet Thumbnail Gallery
+ */
+
+.cs-gallery {
+	overflow: auto; /* to clear floated elements */
+}
+
+
+/*
+ * Main Image Styles
+ ---------------------------------------------------------*/
+#img-text { /* Main image, image title, image description and image caption text */
+	float: left;
+	font-size: .8em;
+	width: 300px;
+	padding: 0 10px;
+}
+a#main-image {
+	float: left;
+}
+a#main-image img {
+	float: left;
+}
+#img-text h3#img-title {
+	/*display: none;*/
+}
+#img-text #img-description {
+}
+#img-text #img-caption {
+}
+.cs-lightbox-img {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	z-index: 20000;
+	width: 100%;
+	text-align: center;
+}
+
+#blackout {
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	top: 0;
+	left: 0;
+	opacity: 0.70;
+	filter:alpha(opacity=70); /* For IE8 and earlier */
+	position: absolute;
+	z-index: 10000;
+	position: fixed;
+	cursor: pointer;
+}
+
+/*
+ * Thumbnail Styles
+ ---------------------------------------------------------*/
+.cs-gallery {
+    margin: auto;
+    clear: both;
+    overflow: auto;
+}
+.cs-gallery ul {
+	list-style: none;
+}
+
+li.cs-current-img { /* current thumbnail */
+	opacity: 0.50;
+	filter:alpha(opacity=50); /* For IE8 and earlier */
+}
+.gallery-larger {
+	display: none;
+}
+.lightbox-img {
+	display: none;
+}
+.lightbox-img img {
+	cursor: pointer;
+}
+.cs-lightbox-img .lightbox-img {
+	display: block;
+}
+.gallery-item {
+    margin: 0 6px 6px 0;
+    text-align: center;           
+}
+.cs-gallery .gallery-caption {
+    margin-left: 0;
+    display: none;
+}
+.cs-gallery .gallery-description {
+    margin-left: 0;
+    display: none;
+}
+
+/*
+ * Lightbox Styles
+ ---------------------------------------------------------*/
+.cs-hide {display: none;}
+
+.cs-lb-controls { 
+	font-size: 30px; 
+	font-family: "Times New Roman", Times, arial; 
+	font-weight: normal; 
+	line-height: 28px; 
+	position: fixed; 
+	z-index: 25000; 
+	top: 0;
+	right: 0; 
+	margin: 8px; 
+}
+.cs-lb-controls  a { 
+	text-align: center; 
+	float: right; 
+	padding: 16px; 
+	background: #333; 
+	margin-right: 1px; 
+	color: #bbb; 
+	text-decoration: none; 
+	width: 30px; 
+	height: 30px; 
+	opacity: .9; 
+	outline: 0;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.cs-lb-controls a:hover { 
+	background: #555; 
+	color: #fff; 
+	opacity: 1.0; 
+	text-decoration: none; 
+	border: 0;
+}
+.cs-x   { 
+	margin-left: 16px; 
+	-webkit-border-radius: 16px;
+	-moz-border-radius: 16px;
+	border-radius: 16px;
+	cursor: pointer; 
+}
+.cs-back {
+	-webkit-border-top-left-radius: 16px;
+	-webkit-border-bottom-left-radius: 16px;
+	-moz-border-radius-topleft: 16px;
+	-moz-border-radius-bottomleft: 16px;
+	border-top-left-radius: 16px;
+	border-bottom-left-radius: 16px;
+	cursor: pointer;
+}
+.cs-next {
+	-webkit-border-top-right-radius: 16px;
+	-webkit-border-bottom-right-radius: 16px;
+	-moz-border-radius-topright: 16px;
+	-moz-border-radius-bottomright: 16px;
+	border-top-right-radius: 16px;
+	border-bottom-right-radius: 16px;
+	cursor: pointer;
+}
+.cs-no-back   { 
+	visibility:hidden;
+}
+.cs-no-next { 
+	visibility:hidden;
+}
+.cs-lightbox-img ul {list-style: none;}
+.gallery-caption { color: white;  margin: 30px 48px; font-size: 100%;}
+.gallery-description { color: white;  margin: 30px 48px; font-size: 100%;}
