@@ -110,7 +110,9 @@ jQuery(document).ready(function($) {
 				$('div.cs-lightbox-img.' + csGalleryIconID ).children(csImageClassNum).addClass('cs-current');
 				
 				//add .cs-current-img to thumbnail
-				$(this).addClass('cs-current-img');			
+				$(this).addClass('cs-current-img');		
+				//remove title from current image
+				$('.cs-current-img a img,.cs-current-img a').attr('title', '');	
 			}
 		);    
     });

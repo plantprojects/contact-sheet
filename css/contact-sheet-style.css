@@ -167,5 +167,6 @@ li.cs-current-img { /* current thumbnail */
 	visibility:hidden;
 }
 .cs-lightbox-img ul {list-style: none;}
-.gallery-caption { color: white;  margin: 30px 48px; font-size: 100%;}
-.gallery-description { color: white;  margin: 30px 48px; font-size: 100%;}
+.gallery-caption { margin: 30px 48px; font-size: 100%;}
+.gallery-description { margin: 30px 48px; font-size: 100%;}
+.cs-current {color: white;}
