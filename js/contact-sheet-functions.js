@@ -139,6 +139,8 @@ jQuery(document).ready(function($) {
 			$(csGalleryClass).css('top', posTop + 'px');
 			//add blackout div over body
 			$('<div id="blackout" title="close"></div>').prependTo('body');	
+			//add user-select: none;to body
+			$('body').css({'user-select':'none','-webkit-user-select':'none','-khtml-user-select':'none','-moz-user-select':'none','-ms-user-select':'none','-o-user-select':'none'});
 			//add controls to lightbox	
 			$('<div class="cs-lb-controls"><a class="cs-x" title="close">&#x00D7;</a><a class="cs-next" title="Next">&#62;</a><a class="cs-back" title="Previous">&#60;</a></a>').prependTo('body');
 			
@@ -208,6 +210,7 @@ jQuery(document).ready(function($) {
 					$('div.cs-lightbox-img').addClass('cs-hide');
 					$('#blackout').remove();
 					$('.cs-lb-controls').remove();
+					$('body').css({'user-select':'','-webkit-user-select':'','-khtml-user-select':'','-moz-user-select':'','-ms-user-select':'','-o-user-select':''});
 					
 					//get current thumbnail image number
 					var csCurImg = "#" + csGalleryClassId + " .cs-current-img";
