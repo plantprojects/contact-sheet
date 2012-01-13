@@ -92,6 +92,14 @@ li.cs-current-img { /* current thumbnail */
     margin-left: 0;
     display: none;
 }
+.gallery-icon a:hover { 
+	/* Rollover of thumbnail */
+	opacity: .5; 
+}
+.gallery-item li.cs-current-img a:hover {
+	/* Hover state for the current thumbnail. Below removes the rollover effect */
+	cursor: default;
+}
 
 /*
  * Lightbox Styles

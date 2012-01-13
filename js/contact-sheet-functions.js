@@ -31,11 +31,14 @@ jQuery(document).ready(function($) {
         $('.cs-current-img a img, .cs-current-img a, .cs-current li img').attr('title', '');             
 
 		//get id of child gallery
-		var csGalleryID = $(this).children('.cs-gallery').attr('id');		
+		var csGalleryID = $(this).children('.cs-gallery').attr('id');
+		var csGalleryClass = $(this).children('.cs-gallery').attr('class');
+		csGalleryClass = csGalleryClass.replace('cs-gallery ', '');
+				
 		//append lightbox image to div.gallery-item
-		$("<div class='cs-lightbox-img cs-hide " + csGalleryID + "'></div>").appendTo('body');
+		$("<div class='cs-lightbox-img cs-hide " + csGalleryClass + "'></div>").appendTo('body');
 		//add 1st image to lightbox
-		var csThisLightbox = "div." + csGalleryID;
+		var csThisLightbox = ".cs-lightbox-img." + csGalleryClass;
 		
 		//get all the image data for this gallery and hold it in cs-lightbox-img
 		var csList = $(this).children('.cs-gallery').children('div.cs-thumbs').children('ul.gallery-item');
@@ -49,11 +52,11 @@ jQuery(document).ready(function($) {
 		$(csImageArray).appendTo(csThisLightbox);
 		
 		//remove .gallery-icon and .gallery-larger from .cs-lightbox-img
-		$('.cs-lightbox-img.' + csGalleryID).children().children().remove('.gallery-icon, .gallery-larger');
+		$('.cs-lightbox-img.' + csGalleryClass).children().children().remove('.gallery-icon, .gallery-larger');
 		
 		//hide all but first image in lightbox
-		$('.cs-lightbox-img.' + csGalleryID).children('ul.gallery-item').not(':first').addClass('cs-hide');
-		$('.cs-lightbox-img.' + csGalleryID).children('ul.gallery-item:first').addClass('cs-current');
+		$('.cs-lightbox-img.' + csGalleryClass).children('ul.gallery-item').not(':first').addClass('cs-hide');
+		$('.cs-lightbox-img.' + csGalleryClass).children('ul.gallery-item:first').addClass('cs-current');
 		//remove size from lightbox images
 		$('.cs-lightbox-img .lightbox-img img').attr('width', '');
 		$('.cs-lightbox-img .lightbox-img img').attr('height', '');
@@ -98,8 +101,9 @@ jQuery(document).ready(function($) {
 				 */
 				 
 				//add .cs-hide to all children of .cs-lightbox-img for this gallery
-				//gallery icon id
-				var csGalleryIconID = $(this).parent().parent().parent().attr('id');
+				//gallery icon classID
+				var csGalleryIconID = $(this).parent().parent().parent().attr('class');
+				csGalleryIconID = csGalleryIconID.replace('cs-gallery ', '');
 				$('div.cs-lightbox-img.' + csGalleryIconID ).children().addClass('cs-hide')
 				$('div.cs-lightbox-img.' + csGalleryIconID ).children().removeClass('cs-current');
 				//get class that starts with 'img-' and add a . 
@@ -131,7 +135,8 @@ jQuery(document).ready(function($) {
 			var posTop = $(window).scrollTop() + 30;
 			
 			//get the id of the gallery
-			var csGalleryClassId = $(this).parent().attr("id");
+			var csGalleryClassId = $(this).parent().attr("class");
+			csGalleryClassId = csGalleryClassId.replace('cs-gallery ', '');
 			csGalleryClass = "div.cs-lightbox-img." + csGalleryClassId;
 			
 			//create lightbox div with absolute positioning and wrap around new img
