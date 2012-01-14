@@ -68,7 +68,9 @@ jQuery(document).ready(function($) {
 				$e.preventDefault();
 				
 				//remove .cs-current-img from thumbnail
-				$('.gallery-icon').removeClass('cs-current-img');
+				var csRemoveCurrent = $(this).parent().parent().parent().attr('id');
+				var csRemoveCurrent = "#" + csRemoveCurrent + " .cs-current-img";
+				$(csRemoveCurrent).removeClass('cs-current-img');
 								
 				/*
 				 * Medium image swap with caption and description
@@ -218,7 +220,7 @@ jQuery(document).ready(function($) {
 					$('body').css({'user-select':'','-webkit-user-select':'','-khtml-user-select':'','-moz-user-select':'','-ms-user-select':'','-o-user-select':''});
 					
 					//get current thumbnail image number
-					var csCurImg = "#" + csGalleryClassId + " .cs-current-img";
+					var csCurImg = "." + csGalleryClassId + " .cs-current-img";
 					var csCurImgNum = $(csCurImg).parent().attr('class');
 					csCurImgNum = csCurImgNum.replace('gallery-item ', '.');
 					
