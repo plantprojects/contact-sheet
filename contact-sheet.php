@@ -174,13 +174,13 @@ function cs_thumbnail_gallery( $output, $attr) {
 }
 
 //enqueue plugin scripts
-add_action('wp_print_scripts', 'cs_thumbnail_gallery_scripts');
+add_action('wp_enqueue_scripts', 'cs_thumbnail_gallery_scripts');
 function cs_thumbnail_gallery_scripts() {   
 	wp_enqueue_script( 'cs-thumbnail-swap', plugins_url( '/js/contact-sheet-functions.js' ), array( 'jquery' ) );
 }
 
 //enqueue plugin styles
-add_action('wp_print_styles', 'cs_thumbnail_gallery_styles');
+add_action('wp_enqueue_scripts', 'cs_thumbnail_gallery_styles');
 function cs_thumbnail_gallery_styles() {
 	wp_enqueue_style( 'cs-thumbs-style', plugins_url( '/css/contact-sheet-style.css', __FILE__ ), false, '1.0', 'all' ); 
 }
