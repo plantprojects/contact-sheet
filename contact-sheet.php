@@ -176,7 +176,7 @@ function cs_thumbnail_gallery( $output, $attr) {
 //enqueue plugin scripts
 add_action('wp_enqueue_scripts', 'cs_thumbnail_gallery_scripts');
 function cs_thumbnail_gallery_scripts() {   
-	wp_enqueue_script( 'cs-thumbnail-swap', plugins_url( '/js/contact-sheet-functions.js' ), array( 'jquery' ) );
+	wp_enqueue_script( 'cs-thumbnail-swap', plugins_url( '/js/contact-sheet-functions.js', __FILE__ ), array( 'jquery' ) );
 }
 
 //enqueue plugin styles
