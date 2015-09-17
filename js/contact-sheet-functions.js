@@ -89,12 +89,14 @@ jQuery(document).ready(function($) {
 				
 				//add this description text to main description div
 				var newcsDescription = $(this).siblings('li.gallery-description');
-				newcsDescription = newcsDescription.html();
+				//newcsDescription = newcsDescription.html();
+				newcsDescription = ( newcsDescription.html() ) ? newcsDescription.html() : "";
 				$(this).parent().parent().parent().children('p.cs-main-description').html(newcsDescription);
 				
 				//add this caption text to main caption div
 				var newcsCaption = $(this).siblings('li.gallery-caption');
-				newcsCaption = newcsCaption.html();
+				//newcsCaption = newcsCaption.html();
+				newcsCaption = ( newcsCaption.html() ) ? newcsCaption.html() : "";
 				$(this).parent().parent().parent().children('p.cs-main-caption').html(newcsCaption);
 				
 				
